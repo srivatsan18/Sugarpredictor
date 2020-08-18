@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>Blood Sugar Level Predictor </title>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
+</head>
+<style>
+	body
+{
+    background-color: lightblue;
+}
+.agg{
+    text-align: center;
+    padding: 30px;
+}
+.tab{
+	position:absolute;
+	left:150px; 
+}
+</style>
+<body>
+<h1> Diabetic Value Predictor </h1>
+<!-- AGE,SEX,BMI,BP -->
+<form action="/result" method="post">
+<div class="agg">
+	<label for="sugar">Enter your Age :</label>
+	<input type="text" name="age" required placeholder="Age"></<input>
+</div>
+<div class="agg">
+<label for="sugar">Enter your Sex : </label>
+	<input type="radio" id="male" name="sex" value="1">
+	<label for="Male">Male</label><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;
+	<input type="radio" id="female" name="sex" value="2">
+	<label for="Female">&nbsp;&nbsp;Female</label><br><br>
+</div>
+<div class="agg">
+	<label for="sugar">Enter your BMI :</label>
+	<input type="text" name="bmi" required placeholder="BMI"></<input>
+</div>
+<div class="agg">
+	<label for="sugar">Enter your Blood pressure :</label>
+	<input type="text" name="bp" required placeholder="BP"></<input>
+</div>
+	<p class="agg"><input type = "submit" value = "submit" /></p>
+</form>
+<div class="agg">
+<h3>Your Blood Sugar value is  {{ result }} </h3>
+</div>
+</body>
+</html>
